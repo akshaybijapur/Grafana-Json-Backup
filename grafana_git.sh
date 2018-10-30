@@ -1,5 +1,8 @@
 #!/bin/sh
 
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+export DISPLAY=:0.0
+
 # This is the Directory where the script grafana_backup.sh runs and it further creates a directory with the name of the Grafana host name.
 x="/home/admin/Documents/"
 
