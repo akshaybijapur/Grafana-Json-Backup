@@ -20,35 +20,11 @@ if [ "$?" = "0" ]; then
         
 	git add *
 	if [ "$?" = "0" ]; then
-		echo "linux completed"
+		echo "All files in $y diroctory added"
 	else
-		echo "Error while adding Linux Servers.json file" 1>&2
+		echo "Error while adding files from $y directory" 1>&2
 		exit 1
 	fi
-
-#	git add CollectD.json
-#	if [ "$?" = "0" ]; then
- #      		echo "CollectD completed"
-#	else
- #       	echo "Error while adding CollectD.json file" 1>&2
-  #      	exit 1
-#	fi
-
-#	git add NetApp.json
-#	if [ "$?" = "0" ]; then
- #       	echo "Netapp completed"
-#	else
- #       	echo "Error while adding NetApp.json file" 1>&2
-  #      	exit 1
-#	fi
-
-#	git add Switches.json
-##	if [ "$?" = "0" ]; then
-  #      	echo "Switch completed"
-#	else
- #       	echo "Error while adding Switches.json file" 1>&2
-  #     		exit 1
-#	fi
 
 else
         echo "Directory does not exist" 1>&2
