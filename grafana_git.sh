@@ -1,12 +1,21 @@
 #!/bin/sh
 
- x="/home/admin/Documents/"
- y="/home/admin/Documents/10.125.0.155/General/"
+# This is the Directory where the script grafana_backup.sh runs and it further creates a directory with the name of the Grafana host name.
+x="/home/admin/Documents/"
+
+# This is the Directory created after the backup is done and all the dashboards are stored in the "General" directory 
+y="/home/admin/Documents/10.125.0.155/General/"
+
+# A host name of Grafana used to access the dashboards
+a="http://10.125.0.155:3000"
+
+# An api key generated in grafana 
+b="eyJrIjoiUGpQbVk3ZEZ6ZUx3ZURNNXlRcEtwNnNQdVE2cTIyS0wiLCJuIjoiQmFja3VwIiwiaWQiOjF9"
   
 
 cd $x
 if [ "$?" = "0" ]; then
-        sh grafana_backup.sh http://10.125.0.155:3000 eyJrIjoiUGpQbVk3ZEZ6ZUx3ZURNNXlRcEtwNnNQdVE2cTIyS0wiLCJuIjoiQmFja3VwIiwiaWQiOjF9
+        sh grafana_backup.sh $a $b
 else
         echo "Directory does not exist" 1>&2
         exit 1
