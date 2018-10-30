@@ -3,6 +3,15 @@
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 export DISPLAY=:0.0
 
+git config credential.helper "/bin/bash /home/admin/Documents/10.125.0.155/General/credential-helper.sh"
+if [ "$?" = "0" ]; then
+        echo "Credentials successful"
+else
+        echo "Directory does not exist" 1>&2
+        exit 1
+fi
+
+
 # This is the Directory where the script grafana_backup.sh runs and it further creates a directory with the name of the Grafana host name.
 x="/home/admin/Documents/"
 
