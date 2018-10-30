@@ -12,7 +12,7 @@ a="http://10.125.0.155:3000"
 # An api key generated in grafana 
 b="eyJrIjoiUGpQbVk3ZEZ6ZUx3ZURNNXlRcEtwNnNQdVE2cTIyS0wiLCJuIjoiQmFja3VwIiwiaWQiOjF9"
   
-
+# Check for the directory and run the "grafana_backup.sh" script
 cd $x
 if [ "$?" = "0" ]; then
         sh grafana_backup.sh $a $b
@@ -24,6 +24,7 @@ fi
 
 echo "backup completed"
 
+# Change directory and push all the files that were backed up previously into github
 cd $y
 if [ "$?" = "0" ]; then
         
@@ -42,6 +43,6 @@ fi
 
 
 git commit -m "Automatic Backup @ $(date)"
-git push -u origin master --force
+git push -u origin master 
 
 echo "Pushed and committed to Github"
